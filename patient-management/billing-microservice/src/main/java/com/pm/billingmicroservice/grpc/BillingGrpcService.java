@@ -22,5 +22,11 @@ public class BillingGrpcService extends BillingServiceImplBase {
                 .setAccountId("123")
                 .setStatus("ac")
                 .build();
+
+        log.info("createBillingAccount response: {}", billingResponse.toString());
+
+        responseObserver.onNext(billingResponse);
+        responseObserver.onCompleted();
+
     }
 }
